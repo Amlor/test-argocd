@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
-  metadata:
-    name: nginx
+metadata:
+  name: nginx
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-     app: nginx
+      app: nginx
   template:
     metadata:
       labels:
-        app: vote-ui
+        app: nginx
     spec:
       containers:
-        - image: nginx:latest
-          name: nginx
-          ports:
-            - containerPort: 80
+      - image: nginx
+        name: nginx:latest
+        ports:
+        - containerPort: 80
